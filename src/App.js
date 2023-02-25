@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Contact from "./components/Contact";
 import {Routes, Route} from "react-router";
 import {BrowserRouter as Router} from 'react-router-dom';
+import { Register } from "./components/Register";
+import Thanks from "./components/Thanks";
 
 function App(){
     return(
@@ -15,6 +17,8 @@ function App(){
                     <Route exact path="/" element={<Home/>}></Route>
                     <Route exact path="/about" element={<About/>}></Route>
                     <Route exact path="/contact" element={<Contact/>}></Route>
+                    <Route exact path="/register" element={<Register/>}></Route>
+                    <Route exact path="/thanks" element={<Thanks/>}></Route>
                 </Routes>
             </Router>
         </>
