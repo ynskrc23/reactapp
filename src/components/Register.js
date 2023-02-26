@@ -11,7 +11,6 @@ export const Register = () => {
 
     async function Save(){
         let item = {name,mobile,password,email}
-        //console.warn(item);
         let result = await fetch("http://127.0.0.1:8000/api/register-user",{
             method:"POST",
             headers:{
@@ -21,7 +20,12 @@ export const Register = () => {
         });
         result = await result.json();
         console.warn("result",result);
-        navigate("/thanks");
+        if(result['email'] == "Email already exists"){
+            alert(result["email"]);
+        }
+        else {
+            navigate("/thanks");
+        }
     }
 
   return (
