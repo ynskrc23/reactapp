@@ -20,7 +20,7 @@ export const Register = () => {
         });
         result = await result.json();
         console.warn("result",result);
-        if(result['email'] == "Email already exists"){
+        if(result['email'] === "Email already exists"){
             alert(result["email"]);
         }
         else {

@@ -6,7 +6,9 @@ import Contact from "./components/Contact";
 import {Routes, Route} from "react-router";
 import {BrowserRouter as Router} from 'react-router-dom';
 import { Register } from "./components/Register";
+import { Login } from "./components/Login";
 import Thanks from "./components/Thanks";
+import Account from "./components/Account";
 
 function App(){
     return(
@@ -18,7 +20,9 @@ function App(){
                     <Route exact path="/about" element={<About/>}></Route>
                     <Route exact path="/contact" element={<Contact/>}></Route>
                     <Route exact path="/register" element={<Register/>}></Route>
+                    <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/thanks" element={<Thanks/>}></Route>
+                    <Route exact path="/account" element={<Account/>}></Route>
                 </Routes>
             </Router>
         </>
