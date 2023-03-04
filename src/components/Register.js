@@ -19,9 +19,19 @@ export const Register = () => {
             body: JSON.stringify(item)
         });
         result = await result.json();
-        console.warn("result",result);
-        if(result['email'] === "Email already exists"){
+        //console.warn("result",result);
+        
+        if(result['name'] == "Name is required"){
+            alert(result["name"]);
+        }
+        else if(result['email'] == "Email already exists"){
             alert(result["email"]);
+        }
+        else if(result['email'] == "Email is required"){
+            alert(result["email"]);
+        }
+        else if(result['password'] == "Password is required"){
+            alert(result["password"]);
         }
         else {
             navigate("/thanks");
