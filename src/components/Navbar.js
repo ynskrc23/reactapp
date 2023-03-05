@@ -1,7 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 export const Navbar = () => {
+    const user = JSON.stringify(localStorage.getItem('user'));
+    const navigate = useNavigate();
     return (
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -20,12 +22,26 @@ export const Navbar = () => {
                         <li class="nav-item">
                             <Link class="nav-link" to="/contact">Contact</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/register">Register</Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/login">Login</Link>
-                        </li>
+                        {
+                            localStorage.getItem('user')?
+                            <>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/account">Account</Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/logout">Logout</Link>
+                                </li>
+                            </>
+                            :
+                            <>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/register">Register</Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/login">Login</Link>
+                                </li>
+                            </>
+                        }
                     </ul>
                 </div>
             </div>

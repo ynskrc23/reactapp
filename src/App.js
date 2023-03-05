@@ -9,6 +9,7 @@ import { Register } from "./components/Register";
 import { Login } from "./components/Login";
 import Thanks from "./components/Thanks";
 import Account from "./components/Account";
+import Logout from "./components/Logout";
 
 function App(){
     return(
@@ -23,6 +24,7 @@ function App(){
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/thanks" element={<Thanks/>}></Route>
                     <Route exact path="/account" element={<Account/>}></Route>
+                    <Route exact path="/logout" element={<Logout/>}></Route>
                 </Routes>
             </Router>
         </>

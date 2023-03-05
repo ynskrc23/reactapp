@@ -35,6 +35,7 @@ export const Login = () => {
             alert(result['message']);
         }
         else{
+            localStorage.setItem("user",JSON.stringify(result))
             navigate("/account");
         }    
     }
